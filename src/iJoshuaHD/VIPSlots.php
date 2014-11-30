@@ -64,9 +64,9 @@ class VIPSlots extends PluginBase implements Listener{
 			case "vips":
 			
 				if(!isset($args[0])){
-						$p->sendMessage("Usage: /vips <add/remove>");
+						$p->sendMessage("Usage: /vips <add/remove/list>");
 				}elseif(count($args) > 3){
-						$p->sendMessage("Usage: /vips <add/remove>");
+						$p->sendMessage("Usage: /vips <add/remove/list>");
 				}else{
 				
 					$cmds = strtolower($args[0]);
@@ -107,8 +107,21 @@ class VIPSlots extends PluginBase implements Listener{
 							$p->sendMessage("Usage: /vips remove <player>");
 						}
 						
+					}elseif($cmds === "list"){
+					
+						$file = fopen($this->vip, "r");
+						$i = 0;
+						while (!feof($file)) {
+							$vips[] = fgets($file);
+						}
+						fclose($file);
+
+						$p->sendMessage("-==[ VIPSlots List ]==-");
+						foreach ($vips as $vip){
+							$p->sendMessage(" - " . $vip);
+						}
 					}else{
-						$p->sendMessage("Usage: /vips <add/remove>");
+						$p->sendMessage("Usage: /vips <add/remove/list>");
 					}
 					
 				}
