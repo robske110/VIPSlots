@@ -54,7 +54,7 @@ class VIPSlots extends PluginBase implements Listener{
 		if($command->getName() == "vips"){
 		
 			if(!isset($args[0]) || count($args) > 2){
-				$p->sendMessage("Usage: /vips <add/remove/list> <player>");
+				$p->sendMessage("Usage: /vips <add/remove/list>");
 				return true;
 			}
 			
