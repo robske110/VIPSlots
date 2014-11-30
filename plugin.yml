@@ -20,4 +20,4 @@ permissions:
         description: "Allows access to all VIPSlots Core features."
       vips.command.vips:
         default: op
-        description: "/vips <add/remove> <player>"
+        description: "/vips <add/remove/list>"
