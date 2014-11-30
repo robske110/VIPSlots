@@ -1,0 +1,23 @@
+name: VIPSlots
+main: iJoshuaHD\VIPSlots
+version: 0.0.1
+api: [1.8.0]
+load: STARTUP
+author: iJoshuaHD
+description: Enable VIP players to join full servers.
+website: https://github.com/ijoshuahd/VIPSlots
+commands:
+ vips:
+  description: "Set Permissions"
+  permission: icore.command.rank
+permissions:
+  vips:
+    default: op
+    description: "Allows access to all VIPSlots features."
+    children:
+      vips.*:
+        default: op
+        description: "Allows access to all VIPSlots Core features."
+      vips.command.vips:
+        default: op
+        description: "/vips <add/remove> <player>"
