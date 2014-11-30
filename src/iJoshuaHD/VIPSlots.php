@@ -74,8 +74,7 @@ class VIPSlots extends PluginBase implements Listener{
 					if($cmds === "add"){
 						
 						if(isset($args[1])){
-							$nugget_head = $args[1];
-							$who_player = $this->getValidPlayer($nugget_head);
+							$who_player = $this->getValidPlayer($args[1]);
 							if($who_player instanceof Player){
 								$target = $who_player->getName();
 							}else{
