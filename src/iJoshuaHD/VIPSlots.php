@@ -36,7 +36,7 @@ class VIPSlots extends PluginBase implements Listener{
 	public function onPlayerKick(PlayerKickEvent $event){
 		$p = strtolower($event->getPlayer()->getName());
 		
-		if($this->vips->exists($p)){
+		if($this->vips->exists($p) and $event->getReason() === "server full"){
 			$event->setCancelled(true);
 		}
 		
