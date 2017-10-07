@@ -14,6 +14,8 @@ use pocketmine\command\Command;
 use pocketmine\utils\Config;
 
 class VIPSlots extends PluginBase implements Listener{
+	/** @var Config */
+	private $vips;
 
     public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -47,7 +49,7 @@ class VIPSlots extends PluginBase implements Listener{
 	*================*
 	*****************/
 	
-	public function onCommand(CommandSender $p, Command $command, $label, array $args){
+	public function onCommand(CommandSender $p, Command $command, string $label, array $args): bool{
 	
 		if($command->getName() == "vips"){
 		
